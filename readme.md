@@ -198,6 +198,7 @@ http://localhost:11434
 ```
 
 The Ollama models are **not included with this project**.
+> **Note:** Response speed depends on the user's system and the Ollama model being used. Factors such as CPU, GPU, RAM, and model size can affect how quickly responses are generated.
 
 ## Running the Application
 
