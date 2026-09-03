@@ -728,7 +728,7 @@ class CodeBlock(QFrame):
         )
 
         header = QWidget()
-
+        header.setFixedHeight(32)
         headerLayout = QHBoxLayout(
             header
         )
@@ -759,7 +759,7 @@ class CodeBlock(QFrame):
         headerLayout.addStretch()
 
         self.copyButton = CopyButton()
-
+        self.copyButton.setFixedHeight(24)
         self.copyButton.clicked.connect(
             self.copyCode
         )
@@ -1313,6 +1313,15 @@ class MainWindow(QMainWindow):
             ),
             centralWidget.height()
         )
+        if self.aiStreamingLabel is not None:
+            self.aiStreamingLabel.updateGeometry()
+
+        if self.aiBubble is not None:
+            self.aiBubble.updateGeometry()
+
+        if hasattr(self, "chatLayout"):
+            self.chatLayout.invalidate()
+            self.chatLayout.activate()
 
     # =====================================================
     # SAVE CHAT SCROLL ANCHOR
@@ -3120,7 +3129,7 @@ class MainWindow(QMainWindow):
             """)
 
             self.aiStreamingLabel.setSizePolicy(
-                QSizePolicy.Expanding,
+                QSizePolicy.Ignored,
                 QSizePolicy.Minimum
             )
 
@@ -3202,10 +3211,13 @@ class MainWindow(QMainWindow):
         self.aiStreamingLabel.setText(
             html
         )
-
+        
+        self.aiStreamingLabel.updateGeometry()
+        self.aiBubble.updateGeometry()
+        self.chatLayout.invalidate()
         # Force the label/document to calculate its actual
         # required height after the HTML changes.
-        self.aiStreamingLabel.adjustSize()
+        # self.aiStreamingLabel.adjustSize()
 
         self.chatLayout.activate()
 
