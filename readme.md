@@ -241,6 +241,10 @@ chat.db
 
 The database is created automatically when the application starts.
 
+If `chat.db` is deleted, all saved conversations stored in it will be lost. A new empty database will be created automatically the next time slowAi starts.
+
+SQLite may also create `chat.db-wal` and `chat.db-shm` files while the application is running. These are normal SQLite files and can be recreated automatically.
+
 ## Building a Windows Executable
 
 The application can be packaged using PyInstaller.
