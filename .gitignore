@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.venv/
+env/
+.env
+
+# Packaging
+build/
+dist/
+*.spec
+
+# PyInstaller
+*.manifest
+*.toc
+*.pyz
+*.pyo
+
+# SQLite database
+*.db
+*.sqlite
+*.sqlite3
+star.py
+*.db
+*.db-shm
+*.db-wal
+# IDEs / editors
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+chat.db
+# Logs
+*.log
