@@ -1,10 +1,18 @@
 import json
 import sqlite3
+import os
 
+app_data = os.getenv("LOCALAPPDATA")
+
+app_dir = os.path.join(app_data, "slowAi")
+
+os.makedirs(app_dir, exist_ok=True)
+
+db_path = os.path.join(app_dir, "chat.db")
 
 class ChatDB:
 
-    def __init__(self, db_path="chat.db"):
+    def __init__(self, db_path=db_path):
         self.db_path = db_path
 
         self.conn = sqlite3.connect(

@@ -237,17 +237,19 @@ python Chat.py
 
 ## Local Data
 
-Chat history is stored in a local SQLite database:
+Chat history is stored in a local SQLite database.
+
+The application stores its SQLite database in the user's local application data directory:
 
 ```text
-chat.db
+%LOCALAPPDATA%\slowAi\chat.db
 ```
 
 The database is created automatically when the application starts.
 
 If `chat.db` is deleted, all saved conversations stored in it will be lost. A new empty database will be created automatically the next time slowAi starts.
 
-SQLite may also create `chat.db-wal` and `chat.db-shm` files while the application is running. These are normal SQLite files and can be recreated automatically.
+SQLite may also create `chat.db-wal` and `chat.db-shm` files in the same directory while the application is running. These are normal SQLite files and are created automatically when needed.
 
 ## Building a Windows Executable
 
