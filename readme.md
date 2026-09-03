@@ -1,5 +1,8 @@
 
-# slowAi
+<h1>
+  <img src="icon/logoPng.png" width="40" style="vertical-align: middle;">
+  slowAi
+</h1>
 
 slowAi is a Python desktop application that lets you interact with locally running models through Ollama.
 
